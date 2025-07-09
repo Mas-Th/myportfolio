@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserApiController {
     @GetMapping
     public String Users() {
-        return "users/index";
+        return "users";
     }
 }

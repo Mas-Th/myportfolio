@@ -12,6 +12,7 @@
 
     <!-- 📦 Khai báo nơi log được ghi -->
     <Appenders>
+        mvn spring-boot:run
 
         <!-- ✅ Ghi log ra màn hình (Console) -->
         <Console name="Console" target="SYSTEM_OUT">
