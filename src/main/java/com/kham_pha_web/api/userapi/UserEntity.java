@@ -29,6 +29,15 @@ public class UserEntity {
     @Column(nullable = false) // ✅ DB bắt buộc có giá trị
     private String password;
 
+    @NotBlank(message = "registrationDate không được để trống")
+    String registrationDate;
+
+    @NotBlank(message = "Email không được để trống")
+    int totalGamesPlayed;
+
+    @NotBlank(message = "level không được để trống")
+    int level;
+
     // ========================== Constructors ==========================
 
     /**
@@ -98,39 +107,39 @@ public class UserEntity {
      * Chỉ cập nhật nếu giá trị mới khác giá trị hiện tại – tránh ghi đè không cần thiết.
      * Đây là một dạng "domain method" – giữ logic cập nhật ngay trong entity.
      */
-    public void updateFromRequest(UserDtoRequest req) {
-        if (!Objects.equals(this.username, req.getUsername())) {
-            this.username = req.getUsername();
-        }
-
-        if (!Objects.equals(this.email, req.getEmail())) {
-            this.email = req.getEmail();
-        }
-        if (!Objects.equals(this.password, req.getPassword())) {
-            this.password = req.getPassword();
-        }
-        // ⚠ Có thể thêm điều kiện cập nhật cho các field khác như password, avatar, address...
-    }
-
-    public boolean updateViolationUser(UserDtoRequest req) {
-        boolean changed = false;
-
-        if (!Objects.equals(this.username, req.getUsername())) {
-            this.username = req.getUsername();
-            changed = true;
-        }
-
-        if (!Objects.equals(this.email, req.getEmail())) {
-            this.email = req.getEmail();
-            changed = true;
-        }
-
-        if (!Objects.equals(this.password, req.getPassword())) {
-            this.password = req.getPassword();
-            changed = true;
-        }
-
-        return changed;
-    }
+//    public void updateFromRequest(UserDtoRequest req) {
+//        if (!Objects.equals(this.username, req.getUsername())) {
+//            this.username = req.getUsername();
+//        }
+//
+//        if (!Objects.equals(this.email, req.getEmail())) {
+//            this.email = req.getEmail();
+//        }
+//        if (!Objects.equals(this.password, req.getPassword())) {
+//            this.password = req.getPassword();
+//        }
+//        // ⚠ Có thể thêm điều kiện cập nhật cho các field khác như password, avatar, address...
+//    }
+//
+//    public boolean updateViolationUser(UserDtoRequest req) {
+//        boolean changed = false;
+//
+//        if (!Objects.equals(this.username, req.getUsername())) {
+//            this.username = req.getUsername();
+//            changed = true;
+//        }
+//
+//        if (!Objects.equals(this.email, req.getEmail())) {
+//            this.email = req.getEmail();
+//            changed = true;
+//        }
+//
+//        if (!Objects.equals(this.password, req.getPassword())) {
+//            this.password = req.getPassword();
+//            changed = true;
+//        }
+//
+//        return changed;
+//    }
 
 }

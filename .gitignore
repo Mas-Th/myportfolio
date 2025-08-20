@@ -36,3 +36,6 @@ build/
 application-secret.properties
 
 src/main/resources/application-secret.properties
+
+src/main/resources/myportfolio-8e547-firebase-adminsdk-fbsvc-ffbf1b9855.json
+src\main\resources\myportfolio-8e547-firebase-adminsdk-fbsvc-ffbf1b9855.json

@@ -1,7 +1,9 @@
 package com.kham_pha_web;
 
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -18,13 +20,13 @@ public class Application {
 	 * SpringApplication.run sẽ khởi động toàn bộ context của Spring Boot
 	 */
 
-	private static final org.slf4j.Logger log = LoggerFactory.getLogger(Application.class);
+	private static final Logger log = LoggerFactory.getLogger(Application.class);
 
 	public static void main(String[] args) {
 		try {
 			log.info("Starting application..."); // Ghi log trước khi khởi chạy (log framework đã sẵn sàng)
 
-			SpringApplication.run(Application.class, args); // ⏩ Chạy Spring Boot
+			SpringApplication.run(Application.class, args); // run Spring Boot
 
 			log.info("Application started successfully."); // Log sau khi hệ thống khởi động xong
 
